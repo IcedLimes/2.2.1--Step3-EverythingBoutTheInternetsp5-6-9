@@ -15,89 +15,96 @@
         h1, h2 {
             color: #333;
         }
-        ul {
-            list-style-type: square;
+        .tab {
+            display: none;
+        }
+        .tab-content {
+            margin-top: 10px;
+        }
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .tab-buttons button {
+            padding: 10px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .tab-buttons button.active {
+            background-color: #666;
+            color: white;
         }
     </style>
 </head>
 <body>
     <h1>Wi-Fi Router Information</h1>
-    <hr>
-
-
-    <h2><u>Origins</u></h2>
-
-    <p>The Wi-Fi router was developed in 1997 by an Australian team consisting of:</p>
-    <ul>
-        <li>John O’Sullivan</li>
-        <li>Terence Percival</li>
-        <li>Graham Daniels</li>
-        <li>Diethelm Ostry</li>
-        <li>John Deane</li>
-    </ul>
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab(event, 'origins')">Origins</button>
+        <button class="tab-button" onclick="openTab(event, 'functionality')">Functionality</button>
+        <button class="tab-button" onclick="openTab(event, 'bands')">Wireless Bands</button>
+        <button class="tab-button" onclick="openTab(event, 'security')">Security</button>
+    </div>
     
-    <h2><u>Alternative Names</u></h2>
-    <p>Another name for a wireless router is the <strong>Wi-Fi router</strong>.</p>
+    <div class="tab-content">
+        <div id="origins" class="tab" style="display: block;">
+            <h2>Origins</h2>
+            <p>The Wi-Fi router was developed in 1997 by an Australian team consisting of:</p>
+            <ul>
+                <li>John O’Sullivan</li>
+                <li>Terence Percival</li>
+                <li>Graham Daniels</li>
+                <li>Diethelm Ostry</li>
+                <li>John Deane</li>
+            </ul>
+        </div>
+        
+        <div id="functionality" class="tab">
+            <h2>Functionality</h2>
+            <p>A Wi-Fi router can be used to:</p>
+            <ul>
+                <li>Access the internet</li>
+                <li>Connect to a private computer network</li>
+            </ul>
+        </div>
+        
+        <div id="bands" class="tab">
+            <h2>Wireless Bands</h2>
+            <p>Some dual-band wireless routers operate on two frequency bands simultaneously:</p>
+            <ul>
+                <li>2.4 GHz band – up to 300 Mbit/s</li>
+                <li>5 GHz band – up to 450 Mbit/s</li>
+            </ul>
+        </div>
+        
+        <div id="security" class="tab">
+            <h2>Network Management and Security</h2>
+            <p>Handles traffic control, security, and settings.</p>
+            <h3>Router Firmware</h3>
+            <ul>
+                <li>The software that controls router functions.</li>
+                <li>Examples: OpenWRT, DD-WRT, Tomato, or manufacturer firmware.</li>
+            </ul>
+            <h3>Firewall and Security</h3>
+            <ul>
+                <li>Built-in firewall to block malicious traffic.</li>
+                <li>Features like <strong>SPI (Stateful Packet Inspection)</strong> and <strong>DoS (Denial of Service) protection.</strong></li>
+            </ul>
+        </div>
+    </div>
     
-    <h2><u>Functionality</u></h2>
-    <p>A Wi-Fi router can be used to:</p>
-    <ul>
-        <li>Access the internet</li>
-        <li>Connect to a private computer network</li>
-    </ul>
-    
-    <h2><u>Wireless Bands</u></h2>
-    <p>Some dual-band wireless routers operate on two frequency bands simultaneously:</p>
-    <ul>
-        <li>2.4 GHz band – up to 300 Mbit/s</li>
-        <li>5 GHz band – up to 450 Mbit/s</li>
-    </ul>
-    
-    <h2><u>Operating System</u></h2>
-    <p>The most common operating system on such embedded devices is <strong>Linux</strong>.</p>
-    
-    <h2><u>SoftAP</u></h2>
-    <p>A computer with the proper software can also run a SoftAP, which is essentially just a HotSpot.</p>
-
-    <h2>Key Milestones</h2>
-    <ul>
-        <li>1997: First Wi-Fi standard (802.11b) introduced.</li>
-        <li>1999: Wi-Fi branding, as well as the formation of the Wi-Fi Alliance.</li>
-        <li>2003: Wi-Fi 5 (802.11a/g) brings faster speeds.</li>
-        <li>2009: Wi-Fi 4 (802.11n) introduces MIMO for better performance.</li>
-        <li>2013: Wi-Fi 5 (802.11ac) offers up to 3.5 Gbps speeds.</li>
-        <li>2018: Wi-Fi 6 (802.11ax) improves speed and efficiency.</li>
-        <li>2023: Wi-Fi 7 promises even faster speeds, approaching 46 Gbps.</li>
-    </ul>
-    
-    <h2><u>Physical Apperance: </u></h2>
-    <p>
-        Here is what the average wireless router looks like:
-    </p>
-    <img src = https://github.com/IcedLimes/2.2.1--Step3-EverythingBoutTheInternetsp5-6-9/blob/main/Images/51R2a9p-vNL._AC_UF894%2C1000_QL80_.jpg>
-
-    <h1>Network Management and Security</h1>
-    <hr>
-
-    <p>Handles traffic control, security, and settings.</p>
-  
-    <h2><u>Router Firmare</u></h2>
-    <ul>
-        <li> The software that controls router functions.</li>
-        <li> Examples: OpenWRT, DD-WRT, Tomato, or manufacturer firmware.</li>
-    </ul>
-    <h2><u> DHCP (Dynamic Host Configuration Protocol)</u></h2>>
-    <ul>
-        <li> Assigns IP addresses to connected devices automatically.</li>
-   </ul>
-   <h2><u>Firewall and Secuirty</u></h2>
-    <ul>
-        <li>Built-in firewall to block malicious traffic.</li>
-        <li>Features like <strong>SPI (Stateful Packet Inspection)</strong> and <strong>DoS (Denial of Service) protection.</strong></li>
-    </ul>
-    <h2><u>VPN Support</u></h2>>
-    <ul>
-        <li> Some routers support VPNs for encrypted browsing.</li>
-   </ul>
- 
-
+    <script>
+        function openTab(event, tabId) {
+            let tabs = document.querySelectorAll(".tab");
+            tabs.forEach(tab => tab.style.display = "none");
+            
+            document.getElementById(tabId).style.display = "block";
+            
+            let buttons = document.querySelectorAll(".tab-button");
+            buttons.forEach(button => button.classList.remove("active"));
+            
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
